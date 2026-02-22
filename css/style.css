@@ -1,0 +1,44 @@
+body {
+  font-family: "Prompt", sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* ปรับความสูงของ Slide ให้สวยงาม */
+.carousel-item {
+  height: 85vh;
+  min-height: 500px;
+}
+
+/* ตั้งค่ารูปภาพพื้นหลังใหม่ โดยแยกคำสั่งให้บราวเซอร์อ่านง่ายขึ้น */
+.hero-bg-1 {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.1) 70%
+    ),
+    url("https://images.unsplash.com/photo-1499678329028-101435549a4e?q=80&w=1920&auto=format&fit=crop"); /* เปลี่ยนลิงก์ภาพวิวทะเลอันใหม่ที่โหลดไวกว่าเดิม */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ปรับแต่งจุดไข่ปลา (Indicators) ให้เป็นวงกลมใสขอบขาว */
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  margin: 0 6px;
+  opacity: 0.7;
+}
+
+.carousel-indicators .active {
+  background-color: #ffffff;
+  opacity: 1;
+}
+
+/* ปุ่ม Hover เมนู */
+.nav-link:hover {
+  color: #666 !important;
+}
