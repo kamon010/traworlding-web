@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TraWorlding | Map Explore</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      /* ปรับแต่ง Scrollbar สำหรับรายการสถานที่ */
+      #map-locations-container::-webkit-scrollbar {
+        width: 6px;
+      }
+      #map-locations-container::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 10px;
+      }
+      .location-card {
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+      .location-card:hover {
+        background-color: #f8f9fa !important;
+        transform: translateX(5px);
+      }
+      /* ตกแต่งปุ่ม Filter เมื่อถูกเลือก */
+      .btn-outline-dark.active {
+        background-color: #212529 !important;
+        color: white !important;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg bg-white py-3 sticky-top border-bottom">
+      <div class="container-fluid px-lg-5">
+        <a
+          class="navbar-brand fw-bold text-dark d-flex align-items-center"
+          href="index.html">
+          <i class="bi bi-globe-americas me-3 fs-5"></i> TraWorlding
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto fw-medium">
+            <li class="nav-item">
+              <a class="nav-link text-dark px-3" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark px-3" href="about.html">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-dark px-3"
+                href="#"
+                data-bs-toggle="dropdown"
+                >Pages</a
+              >
+              <ul class="dropdown-menu rounded-0">
+                <li>
+                  <a class="dropdown-item" href="destinations.html"
+                    >Destinations</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="travelers.html"
+                    >Travelers Profile</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark px-3 fw-bold" href="map.html">Map</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-dark px-3" href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <a
+            href="destinations.html"
+            class="btn btn-dark rounded-0 px-4 py-2 fw-bold"
+            >Book Now</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main class="container-fluid px-lg-5 my-4">
+      <div class="row mb-3">
+        <div class="col-12">
+          <h3 class="fw-bold">
+            <i class="bi bi-map-fill me-2 text-success"></i>
+            ค้นหาสถานที่บนแผนที่
+          </h3>
+          <p class="text-muted">
+            สำรวจจุดกางเต็นท์และที่เที่ยวแนะนำทั่วประเทศไทย
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="bg-white p-2 border shadow-sm rounded-0 h-100">
+            <iframe
+              id="main-map-iframe"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.123456789!2d100.2621!3d16.8236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDQ5JzI1LjAiTiAxMDDCsDE1JzQzLjYiRQ!5e0!3m2!1sth!2sth!4v1234567890"
+              width="100%"
+              height="600"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div
+            class="bg-white border shadow-sm rounded-0 p-3 d-flex flex-column"
+            style="height: 615px">
+            <h5 class="fw-bold mb-3 border-bottom pb-2">ค้นหาสถานที่</h5>
+
+            <div class="mb-3 d-flex flex-wrap gap-2" id="categoryFilters">
+              <button
+                class="btn btn-sm btn-outline-dark rounded-0 px-3 active"
+                data-category="ทั้งหมด">
+                ทั้งหมด
+              </button>
+              <button
+                class="btn btn-sm btn-outline-dark rounded-0 px-3"
+                data-category="จุดกางเต็นท์">
+                จุดกางเต็นท์
+              </button>
+              <button
+                class="btn btn-sm btn-outline-dark rounded-0 px-3"
+                data-category="ภูเขา">
+                ภูเขา
+              </button>
+              <button
+                class="btn btn-sm btn-outline-dark rounded-0 px-3"
+                data-category="วัด">
+                วัด
+              </button>
+              <button
+                class="btn btn-sm btn-outline-dark rounded-0 px-3"
+                data-category="น้ำตก">
+                น้ำตก
+              </button>
+            </div>
+
+            <div class="input-group mb-3 shadow-sm">
+              <span class="input-group-text bg-white border-end-0 rounded-0"
+                ><i class="bi bi-search text-muted"></i
+              ></span>
+              <input
+                type="text"
+                id="searchInput"
+                class="form-control border-start-0 rounded-0 p-2"
+                placeholder="พิมพ์ชื่อที่เที่ยว หรือจังหวัด..." />
+            </div>
+
+            <div
+              id="map-locations-container"
+              class="d-flex flex-column gap-3 overflow-auto"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+      <div class="container">
+        <p class="mb-0">
+          © 2026 TraWorlding Project. จัดทำโดยกลุ่มนิสิต มหาวิทยาลัยนเรศวร
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

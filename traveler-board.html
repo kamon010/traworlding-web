@@ -1,0 +1,36 @@
+<main class="container my-5">
+  <h2 class="fw-bold mb-4">Traveler Board</h2>
+  <div class="row g-4" id="board-container"></div>
+</main>
+
+<script>
+  // ตัวอย่างการสร้าง Card ในหน้า Board
+  function renderBoard() {
+    const container = document.getElementById("board-container");
+    travelerPosts.forEach((post) => {
+      const traveler = travelers.find((u) => u.id === post.travelerId);
+      const destination = destinations.find((d) => d.id === post.destinationId);
+
+      container.innerHTML += `
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <a href="place-detail.html?id=${destination.id}">
+                        <img src="${post.image}" class="card-img-top" alt="post">
+                    </a>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="${traveler.avatar}" class="rounded-circle me-2" width="40">
+                            <div>
+                                <h6 class="mb-0 fw-bold">${traveler.name}</h6>
+                                <small class="text-muted">รีวิวที่: ${destination.title}</small>
+                            </div>
+                        </div>
+                        <p class="card-text text-muted small">${post.content}</p>
+                        <a href="place-detail.html?id=${destination.id}" class="btn btn-sm btn-outline-dark">ดูสถานที่นี้</a>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+  }
+</script>
