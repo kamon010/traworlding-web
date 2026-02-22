@@ -6,7 +6,7 @@ const destinations = [
     title: "อุทยานแห่งชาติภูหินร่องกล้า",
     location: "พิษณุโลก",
     image:
-      "https://images.unsplash.com/photo-1585553616435-2dc0a54e271d?q=80&w=800",
+      "https://files.thailandtourismdirectory.go.th/assets/upload/2018/08/16/20180816d41d8cd98f00b204e9800998ecf8427e134735.jpg",
     description:
       "สัมผัสอากาศหนาวเย็นตลอดปี ชมความงามของลานหินปุ่ม และศึกษาประวัติศาสตร์โรงเรียนการเมืองการทหาร เป็นจุดกางเต็นท์ยอดฮิตที่อยู่ห่างจาก ม.นเรศวร เพียง 130 กม.",
     category: "จุดกางเต็นท์",
@@ -19,7 +19,7 @@ const destinations = [
     title: "ทุ่งแสลงหลวง (หนองแม่นา)",
     location: "เพชรบูรณ์",
     image:
-      "https://images.unsplash.com/photo-1504280390467-33923a1a5113?q=80&w=800",
+      "https://sundayz.me/wp-content/uploads/2021/07/thung-salaeng-luang-ep2-10-featured.jpg",
     description:
       "ฉายา 'ทุ่งหญ้าสะวันนาแห่งเมืองไทย' เหมาะกับการมาปั่นจักรยานชมวิวและกางเต็นท์ในช่วงปลายฝนต้นหนาว เพื่อรอชมแสงเช้าส่องผ่านไอหมอก",
     category: "จุดกางเต็นท์",

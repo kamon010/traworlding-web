@@ -17,17 +17,17 @@
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="bg-light">
-    <nav class="navbar navbar-expand-lg bg-white py-3 sticky-top border-bottom">
+    <nav class="navbar navbar-expand-lg bg-white py-3 sticky-top">
       <div class="container-fluid px-lg-5">
         <a
-          class="navbar-brand fw-bold text-dark d-flex align-items-center"
+          class="navbar-brand text-dark d-flex align-items-center"
           href="index.html">
-          <i class="bi bi-globe-americas me-3 fs-5"></i> TraWorlding
+          <i class="bi bi-globe-americas me-2 text-primary"></i> TraWorlding
         </a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -35,33 +35,14 @@
           data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto fw-medium">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-medium">
             <li class="nav-item">
               <a class="nav-link text-dark px-3" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark px-3" href="about.html">About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle text-dark px-3 fw-bold"
-                href="#"
-                data-bs-toggle="dropdown"
-                >Pages</a
-              >
-              <ul class="dropdown-menu rounded-0">
-                <li>
-                  <a class="dropdown-item" href="destinations.html"
-                    >Destinations</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item fw-bold" href="travelers.html"
-                    >Travelers Profile</a
-                  >
-                </li>
-              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark px-3" href="map.html">Map</a>
@@ -70,11 +51,42 @@
               <a class="nav-link text-dark px-3" href="contact.html">Contact</a>
             </li>
           </ul>
-          <a
-            href="destinations.html"
-            class="btn btn-dark rounded-0 px-4 py-2 fw-bold"
-            >Book Now</a
-          >
+
+          <ul class="navbar-nav ms-auto fw-medium">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle nav-pages-btn rounded-0 px-4 py-2 fw-bold d-flex align-items-center"
+                href="#"
+                id="pagesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-list me-2"></i> Pages
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end rounded-0 shadow-sm border-0"
+                aria-labelledby="pagesDropdown">
+                <li>
+                  <a class="dropdown-item" href="destinations.html">
+                    <i class="bi bi-geo-alt"></i> Destinations
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="travelers.html">
+                    <i class="bi bi-person-circle"></i> Travelers Profile
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a
+                    class="dropdown-item fw-bold text-primary"
+                    href="traveler-board.html">
+                    <i class="bi bi-clipboard-data"></i> Traveler Board
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -95,136 +107,20 @@
     </header>
 
     <main class="container my-5 py-4">
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-6 col-lg-4">
-          <div
-            class="card h-100 border-0 shadow-sm text-center bg-white rounded-0">
-            <div class="card-body p-5">
-              <img
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop"
-                class="rounded-circle mb-4 border border-3 border-light shadow-sm"
-                alt="Traveler 1"
-                style="width: 120px; height: 120px; object-fit: cover" />
-              <h4 class="card-title fw-bold">Kamonrat</h4>
-              <h6 class="text-success mb-3" style="font-size: 0.85rem">
-                <i class="bi bi-patch-check-fill"></i> Verified Explorer
-              </h6>
-              <p class="card-text text-muted mb-4" style="font-size: 0.95rem">
-                "โลกใบนี้เปรียบเสมือนหนังสือเล่มใหญ่
-                และผู้ที่ไม่เคยเดินทางก็เหมือนอ่านหนังสือแค่หน้าเดียว"
-              </p>
-
-              <div
-                class="d-flex justify-content-center border-top border-bottom py-3 mb-4">
-                <div class="px-3 border-end">
-                  <h5 class="fw-bold mb-0">15</h5>
-                  <small class="text-muted">รีวิว</small>
-                </div>
-                <div class="px-3">
-                  <h5 class="fw-bold mb-0">8</h5>
-                  <small class="text-muted">จังหวัด</small>
-                </div>
-              </div>
-
-              <a
-                href="destinations.html"
-                class="btn btn-outline-dark rounded-0 px-4 w-100"
-                >ดูรีวิวทั้งหมด</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div
-            class="card h-100 border-0 shadow-sm text-center bg-white rounded-0">
-            <div class="card-body p-5">
-              <img
-                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop"
-                class="rounded-circle mb-4 border border-3 border-light shadow-sm"
-                alt="Traveler 2"
-                style="width: 120px; height: 120px; object-fit: cover" />
-              <h4 class="card-title fw-bold">TravelBuddy</h4>
-              <h6 class="text-success mb-3" style="font-size: 0.85rem">
-                <i class="bi bi-patch-check-fill"></i> Pro Camper
-              </h6>
-              <p class="card-text text-muted mb-4" style="font-size: 0.95rem">
-                "หลงรักกลิ่นไอดินและเสียงลมพัดผ่านยอดสน
-                สายกางเต็นท์ตัวยงที่ชอบค้นหาจุดลับๆ ทั่วไทย"
-              </p>
-
-              <div
-                class="d-flex justify-content-center border-top border-bottom py-3 mb-4">
-                <div class="px-3 border-end">
-                  <h5 class="fw-bold mb-0">24</h5>
-                  <small class="text-muted">รีวิว</small>
-                </div>
-                <div class="px-3">
-                  <h5 class="fw-bold mb-0">12</h5>
-                  <small class="text-muted">จังหวัด</small>
-                </div>
-              </div>
-
-              <a
-                href="destinations.html"
-                class="btn btn-outline-dark rounded-0 px-4 w-100"
-                >ดูรีวิวทั้งหมด</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <div
-            class="card h-100 border-0 shadow-sm text-center bg-white rounded-0">
-            <div class="card-body p-5">
-              <img
-                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=400&auto=format&fit=crop"
-                class="rounded-circle mb-4 border border-3 border-light shadow-sm"
-                alt="Traveler 3"
-                style="width: 120px; height: 120px; object-fit: cover" />
-              <h4 class="card-title fw-bold">NatureLover</h4>
-              <h6 class="text-success mb-3" style="font-size: 0.85rem">
-                <i class="bi bi-patch-check-fill"></i> Mountain Hiker
-              </h6>
-              <p class="card-text text-muted mb-4" style="font-size: 0.95rem">
-                "ชีวิตคือการปีนป่าย ยิ่งขึ้นไปสูงเท่าไหร่
-                วิวที่ได้เห็นก็ยิ่งสวยงามและคุ้มค่าเหนื่อยมากขึ้นเท่านั้น"
-              </p>
-
-              <div
-                class="d-flex justify-content-center border-top border-bottom py-3 mb-4">
-                <div class="px-3 border-end">
-                  <h5 class="fw-bold mb-0">9</h5>
-                  <small class="text-muted">รีวิว</small>
-                </div>
-                <div class="px-3">
-                  <h5 class="fw-bold mb-0">5</h5>
-                  <small class="text-muted">จังหวัด</small>
-                </div>
-              </div>
-
-              <a
-                href="destinations.html"
-                class="btn btn-outline-dark rounded-0 px-4 w-100"
-                >ดูรีวิวทั้งหมด</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
+      <div
+        class="row g-4 justify-content-center"
+        id="travelers-container"></div>
     </main>
 
     <footer class="bg-dark text-white text-center py-4 mt-auto">
       <div class="container">
-        <p class="mb-0">
-          © 2026 TraWorlding Project. จัดทำโดยกลุ่มนิสิต (โปรเจควิชา Web
-          Development)
-        </p>
+        <p class="mb-0">© 2026 TraWorlding Project. จัดทำโดยกลุ่มนิสิต</p>
         <small class="text-secondary">ใช้สำหรับเพื่อการศึกษาเท่านั้น</small>
       </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

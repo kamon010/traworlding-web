@@ -1,7 +1,70 @@
+/* --- สไตล์พื้นฐานของเว็บไซต์ --- */
 body {
   font-family: "Prompt", sans-serif;
   background-color: #f8f9fa;
 }
+
+/* --- การปรับแต่ง Navbar (โลโก้และเมนู) --- */
+
+/* 1. ทำให้โลโก้ TraWorlding เข้ม หนา และชัดเจนกว่าเมนูทั่วไป */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 800 !important; /* ความหนาระดับ Extra Bold */
+  letter-spacing: -0.5px;
+  color: #212529 !important;
+}
+
+/* 2. สไตล์ปุ่ม Pages ฝั่งขวา */
+.nav-pages-.nav-pages-btn {
+  background-color: transparent;
+  color: #212529 !important;
+  border: 2px solid #212529 !important; /* ถ้าอยากได้ขอบให้เก็บไว้ ถ้าไม่เอาให้ลบออกครับ */
+  transition: all 0.3s ease;
+}
+
+/* 3. เมื่อ Hover หรือเปิด Dropdown: พื้นหลังดำ ตัวหนังสือต้องขาวชัดเจน */
+.nav-pages-btn:hover,
+.nav-pages-btn:focus,
+.show > .nav-pages-btn.dropdown-toggle {
+  background-color: #212529 !important;
+  color: #ffffff !important; /* ตัวหนังสือขาวเมื่อพื้นหลังดำ */
+}
+
+/* 4. จัดระเบียบเมนูย่อยใน Pages ให้เป็นรูปแบบเดียวกัน */
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 0; /* คงความเหลี่ยมตามสไตล์หลัก */
+  padding: 10px 0;
+}
+
+.dropdown-item {
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.2s;
+}
+
+/* ล็อคตำแหน่งไอคอนในเมนูย่อยให้ตรงกันเป๊ะ */
+.dropdown-item i {
+  width: 25px;
+  margin-right: 8px;
+  color: #666;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #000;
+  padding-left: 25px; /* เพิ่มลูกเล่นการขยับเมื่อชี้ */
+}
+
+/* ปุ่ม Hover เมนูหลัก (Home, About, Map, Contact) */
+.nav-link:hover {
+  color: #666 !important;
+}
+
+/* --- ส่วน Carousel และ Hero Section --- */
 
 /* ปรับความสูงของ Slide ให้สวยงาม */
 .carousel-item {
@@ -9,20 +72,20 @@ body {
   min-height: 500px;
 }
 
-/* ตั้งค่ารูปภาพพื้นหลังใหม่ โดยแยกคำสั่งให้บราวเซอร์อ่านง่ายขึ้น */
+/* ตั้งค่ารูปภาพพื้นหลังใหม่ */
 .hero-bg-1 {
   background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.7) 0%,
       rgba(0, 0, 0, 0.1) 70%
     ),
-    url("https://images.unsplash.com/photo-1499678329028-101435549a4e?q=80&w=1920&auto=format&fit=crop"); /* เปลี่ยนลิงก์ภาพวิวทะเลอันใหม่ที่โหลดไวกว่าเดิม */
+    url("https://images.unsplash.com/photo-1499678329028-101435549a4e?q=80&w=1920&auto=format&fit=crop");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* ปรับแต่งจุดไข่ปลา (Indicators) ให้เป็นวงกลมใสขอบขาว */
+/* ปรับแต่งจุด Indicators ให้เป็นวงกลม */
 .carousel-indicators [data-bs-target] {
   width: 12px;
   height: 12px;
@@ -38,7 +101,56 @@ body {
   opacity: 1;
 }
 
-/* ปุ่ม Hover เมนู */
-.nav-link:hover {
-  color: #666 !important;
+/* --- การปรับแต่ง Footer (ใหม่: เน้นความหนาและสีเข้ม) --- */
+footer {
+  background-color: #212529 !important;
+  padding: 50px 0 30px 0;
+}
+
+footer p {
+  font-weight: 700; /* ทำให้ข้อความจัดทำโดยกลุ่มนิสิตหนาชัดเจน */
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+footer small {
+  color: #adb5bd !important;
+  font-weight: 400;
+}
+
+/* Utility Class สำหรับซ่อนส่วนรีวิวถ้ายังไม่มีข้อมูล */
+.display-none {
+  display: none;
+}
+
+/* รูปพื้นหลังชุดที่ 1 (Welcome) */
+.hero-bg-1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+    url("https://images.unsplash.com/photo-1499678329028-101435549a4e?q=80&w=1920");
+  background-size: cover;
+  background-position: center;
+}
+
+/* รูปพื้นหลังชุดที่ 2 (Phu Hin Rong Kla) */
+.hero-bg-2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+    url("https://files.thailandtourismdirectory.go.th/assets/upload/2018/08/16/20180816d41d8cd98f00b204e9800998ecf8427e134735.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* รูปพื้นหลังชุดที่ 3 (Camping) */
+.hero-bg-3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+    url("https://sundayz.me/wp-content/uploads/2021/07/thung-salaeng-luang-ep2-10-featured.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* รูปพื้นหลังชุดที่ 4 (Community) */
+.hero-bg-4 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1920");
+  background-size: cover;
+  background-position: center;
 }

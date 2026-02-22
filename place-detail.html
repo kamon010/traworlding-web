@@ -20,13 +20,14 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-white py-3 sticky-top border-bottom">
+    <nav class="navbar navbar-expand-lg bg-white py-3 sticky-top">
       <div class="container-fluid px-lg-5">
         <a
-          class="navbar-brand fw-bold text-dark d-flex align-items-center"
+          class="navbar-brand text-dark d-flex align-items-center"
           href="index.html">
-          <i class="bi bi-globe-americas me-3 fs-5"></i> TraWorlding
+          <i class="bi bi-globe-americas me-2 text-primary"></i> TraWorlding
         </a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -34,33 +35,14 @@
           data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto fw-medium">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-medium">
             <li class="nav-item">
               <a class="nav-link text-dark px-3" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark px-3" href="about.html">About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle text-dark px-3 fw-bold"
-                href="#"
-                data-bs-toggle="dropdown"
-                >Pages</a
-              >
-              <ul class="dropdown-menu rounded-0">
-                <li>
-                  <a class="dropdown-item fw-bold" href="destinations.html"
-                    >Destinations</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="travelers.html"
-                    >Travelers Profile</a
-                  >
-                </li>
-              </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link text-dark px-3" href="map.html">Map</a>
@@ -69,11 +51,42 @@
               <a class="nav-link text-dark px-3" href="contact.html">Contact</a>
             </li>
           </ul>
-          <a
-            href="destinations.html"
-            class="btn btn-dark rounded-0 px-4 py-2 fw-bold"
-            >Book Now</a
-          >
+
+          <ul class="navbar-nav ms-auto fw-medium">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle nav-pages-btn rounded-0 px-4 py-2 fw-bold d-flex align-items-center"
+                href="#"
+                id="pagesDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-list me-2"></i> Pages
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end rounded-0 shadow-sm border-0"
+                aria-labelledby="pagesDropdown">
+                <li>
+                  <a class="dropdown-item" href="destinations.html">
+                    <i class="bi bi-geo-alt"></i> Destinations
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="travelers.html">
+                    <i class="bi bi-person-circle"></i> Travelers Profile
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a
+                    class="dropdown-item fw-bold text-primary"
+                    href="traveler-board.html">
+                    <i class="bi bi-clipboard-data"></i> Traveler Board
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
