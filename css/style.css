@@ -126,7 +126,7 @@ footer small {
 /* รูปพื้นหลังชุดที่ 1 (Welcome) */
 .hero-bg-1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
-    url("https://images.unsplash.com/photo-1499678329028-101435549a4e?q=80&w=1920");
+    url("https://a2ztrip.com/images/packages/1754995593_8.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -150,7 +150,7 @@ footer small {
 /* รูปพื้นหลังชุดที่ 4 (Community) */
 .hero-bg-4 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
-    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1920");
+    url("https://www.meetthinks.com/wp-content/uploads/2021/11/wind1.jpg");
   background-size: cover;
   background-position: center;
 }
